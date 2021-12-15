@@ -128,13 +128,13 @@ Dataset links:
 **NOTE:** The codes of [2] and [5-9] are implemented by Liu et.al. and download from https://github.com/ZhiningLiu1998/self-paced-ensemble#results-on-additional-datasets; The code of [4] is implemented by MichałKoziarski and downloads from https://github.com/michalkoziarski/RBU; The codes of [3]is implemented by Wing W. Y. Ng et.al. and downloads from https://github.com/AlirezaKm/HUE.
 
 # References
-> [1] Z. Liu, W. Cao, Z. Gao, J. Bian, H. Chen, Y. Chang, T. Liu, Selfpaced ensemble for highly imbalanced massive data classification, in: 36th IEEE International Conference on Data Engineering, ICDE 2020, Dallas, TX, USA, April 20-24, 2020, IEEE, 2020, pp. 841–852.
-> [2] Z. Wang, C. Cao, Y. Zhu, Entropy and confidence-based undersampling boosting random forests for imbalanced problems, IEEE Trans. Neural Networks Learn. Syst. 31 (12) (2020) 5178–5191. doi:10.1109/TNNLS.2020.2964585.
-> [3] W. W. Y. Ng, S. Xu, J. Zhang, X. Tian, T. Rong, S. Kwong, Hashingbased undersampling ensemble for imbalanced pattern classification problems, IEEE Transactions on Cybernetics (2020) 1–11doi:10. 1109/TCYB.2020.3000754.
-> [4] M. Koziarski, Radial-based undersampling for imbalanced data classification, Pattern Recognit. 102 (2020) 107262. doi:10.1016/j.patcog.2020.107262.
-> [5] N. V. Chawla, A. Lazarevic, L. O. Hall, and K. W. Bowyer, “Smoteboost: Improving prediction of the minority class in boosting,” in European conference on principles of data mining and knowledge discovery. Springer, 2003, pp. 107–119.
-> [6] S. Wang and X. Yao, “Diversity analysis on imbalanced data sets by using ensemble models,” in 2009 IEEE Symposium on Computational Intelligence and Data Mining. IEEE, 2009, pp. 324–331. 
-> [7] C. Seiffert, T. M. Khoshgoftaar, J. Van Hulse, and A. Napolitano, “Rusboost: A hybrid approach to alleviating class imbalance,” IEEE Transactions on Systems, Man, and Cybernetics-Part A: Systems and Humans, vol. 40, no. 1, pp. 185–197, 2010. 
-> [8] R. Barandela, R. M. Valdovinos, and J. S. Sanchez, “New applications´ of ensembles of classifiers,” Pattern Analysis & Applications, vol. 6, no. 3, pp. 245–256, 2003.  
-> [9] X.-Y. Liu, J. Wu, and Z.-H. Zhou, “Exploratory undersampling for class-imbalance learning,” IEEE Transactions on Systems, Man, and Cybernetics, Part B (Cybernetics), vol. 39, no. 2, pp. 539–550, 2009. 
-> [10] S. Gazzah, N. E. B. Amara, New oversampling approaches based on polynomial fitting for imbalanced data sets, in: 2008 The Eighth IAPR InternationalWorkshop on Document Analysis Systems, IEEE, 2008,pp. 677–684.
+[1] Z. Liu, W. Cao, Z. Gao, J. Bian, H. Chen, Y. Chang, T. Liu, Selfpaced ensemble for highly imbalanced massive data classification, in: 36th IEEE International Conference on Data Engineering, ICDE 2020, Dallas, TX, USA, April 20-24, 2020, IEEE, 2020, pp. 841–852.
+[2] Z. Wang, C. Cao, Y. Zhu, Entropy and confidence-based undersampling boosting random forests for imbalanced problems, IEEE Trans. Neural Networks Learn. Syst. 31 (12) (2020) 5178–5191. doi:10.1109/TNNLS.2020.2964585.
+[3] W. W. Y. Ng, S. Xu, J. Zhang, X. Tian, T. Rong, S. Kwong, Hashingbased undersampling ensemble for imbalanced pattern classification problems, IEEE Transactions on Cybernetics (2020) 1–11doi:10. 1109/TCYB.2020.3000754.
+[4] M. Koziarski, Radial-based undersampling for imbalanced data classification, Pattern Recognit. 102 (2020) 107262. doi:10.1016/j.patcog.2020.107262.
+[5] N. V. Chawla, A. Lazarevic, L. O. Hall, and K. W. Bowyer, “Smoteboost: Improving prediction of the minority class in boosting,” in European conference on principles of data mining and knowledge discovery. Springer, 2003, pp. 107–119.
+[6] S. Wang and X. Yao, “Diversity analysis on imbalanced data sets by using ensemble models,” in 2009 IEEE Symposium on Computational Intelligence and Data Mining. IEEE, 2009, pp. 324–331. 
+[7] C. Seiffert, T. M. Khoshgoftaar, J. Van Hulse, and A. Napolitano, “Rusboost: A hybrid approach to alleviating class imbalance,” IEEE Transactions on Systems, Man, and Cybernetics-Part A: Systems and Humans, vol. 40, no. 1, pp. 185–197, 2010. 
+[8] R. Barandela, R. M. Valdovinos, and J. S. Sanchez, “New applications´ of ensembles of classifiers,” Pattern Analysis & Applications, vol. 6, no. 3, pp. 245–256, 2003.  
+[9] X.-Y. Liu, J. Wu, and Z.-H. Zhou, “Exploratory undersampling for class-imbalance learning,” IEEE Transactions on Systems, Man, and Cybernetics, Part B (Cybernetics), vol. 39, no. 2, pp. 539–550, 2009. 
+[10] S. Gazzah, N. E. B. Amara, New oversampling approaches based on polynomial fitting for imbalanced data sets, in: 2008 The Eighth IAPR InternationalWorkshop on Document Analysis Systems, IEEE, 2008,pp. 677–684.
