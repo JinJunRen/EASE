@@ -4,19 +4,24 @@
 
 
 **This repository contains:**
-- Implementation of Equalization Ensemble
-- Implementation of Self-paced Ensemble [1]
-- Implementation of Entropy and Confidence-based Under-sampling Boosting [2]
-- Implementation of Hashing-based Under-sampling Ensemble [3]
-- Implementation of Radial-Based Undersampling [4]
-- Implementation of 5 ensemble-based imbalance learning baselines
+- ensemble
+  - Implementation of Equalization Ensemble (equalizationensemble.py)
+  - Implementation of Self-paced Ensemble (self_paced_ensemble.py)[1]
+  - Implementation of Entropy and Confidence-based Under-sampling Boosting (ECUBoost_RF.py) [2]
+  - Implementation of Hashing-based Under-sampling Ensemble (hub_ensemble.py)[3]
+  - Implementation of Radial-Based Undersampling (rbu.py)[4]
+  - Implementation of 5 ensemble-based imbalance learning baselines (canonical_ensemble.py)
   - `SMOTEBoost` [5]
   - `SMOTEBagging` [6]
   - `RUSBoost` [7]
   - `UnderBagging` [8]
   - `BalanceCascade` [9]
-- Implementation of 15 resampling based imbalance learning baselines
-- Additional experimental results
+- dataset
+  - small-scale dataset (61)
+  - large-scale dataset (0)
+- tools
+  - Implemetation of reading datasets (dataprocess.py)
+  - Implemetation of many metric (diversitymeasure.py), such as `Precision` `Recall` `Gmean` `F1` `MMC` `AUC`
 
 **NOTE:** The codes of [2] and [5-9] are implemented by Liu et.al. and download from https://github.com/ZhiningLiu1998/self-paced-ensemble#results-on-additional-datasets. The code of Polynom fit SMOTE [10] method comes from [smote_variants] https://smote-variants.readthedocs.io/en/latest/installation.html.
 
@@ -59,7 +64,7 @@ git clone https://github.com/JinJunRen/EASE
 
 | Methods    | Description   |
 | ---------- | ------------- |
-| `fit(self, X, y, label_maj=0, label_min=1)` | Build a self-paced ensemble of estimators from the training set (X, y). <br> `label_maj`/`label_min` specify the label of majority/minority class. <br> By default, we let the minority class be positive class (`label_min=1`). |
+| `fit(self, X, y, label_maj=0, label_min=1)` | Build a EASE of estimators from the training set (X, y). <br> `label_maj`/`label_min` specify the label of majority/minority class. <br> By default, we let the minority class be positive class (`label_min=1`). |
 | `predict(self, X)` | Predict class for X. |
 | `predict_proba(self, X)` | Predict class probabilities for X. |
 | `predict_log_proba(self, X)` | Predict class log-probabilities for X. |
