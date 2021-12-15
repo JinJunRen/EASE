@@ -104,8 +104,10 @@ print('auc_prc_score: {}'.format(ease.score(X_test, y_test)))
 ## Conducting comparative experiments
 
 We also provide a simple frameworkfor conveniently comparing the performance of our method and other baselines. It is also a more complex example of how to use our implementation of ensemble methods to perform classification. To use it, simply run:
+1. Run EASE on datasets in the directory 'small-scale_dataset'
+```
+python runEnsemble.py -dir ./dataset/small-scale_dataset/ --alg EASE -est 10  -n 5
 
 ```
-python runEnsemble.py -dir ./dataset/small-scale_dataset/ --alg EASE  -n 10
+2. Run on 
 
-```
