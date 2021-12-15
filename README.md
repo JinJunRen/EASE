@@ -1,6 +1,6 @@
 # Equalization Ensemble method (EASE)
 
-## EASE is a general learning framework for large scale highly imbalanced Data.**
+**EASE is a general learning framework for large scale highly imbalanced Data.**
 
 # Background
 
@@ -105,7 +105,7 @@ Dataset links:
 [KDDCUP](https://archive.ics.uci.edu/ml/datasets/kdd+cup+1999+data), 
 [Record Linkage](https://archive.ics.uci.edu/ml/datasets/Record+Linkage+Comparison+Patterns).
 
-#repository contains
+# Repository contains
 - ensemble
   - Implementation of Equalization Ensemble (equalizationensemble.py)
   - Implementation of Self-paced Ensemble (self_paced_ensemble.py)[1]
