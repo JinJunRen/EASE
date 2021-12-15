@@ -75,13 +75,13 @@ git clone https://github.com/JinJunRen/EASE
 | `estimators_` | *list of estimator* <br> The collection of fitted base estimators. |
 ## Examples
 
-**A minimal example**
+**A simple example**
 ```python
 X, y = <data_loader>.load_data()
 ease = EASE().fit(X, y)
 ```
 
-**A non-minimal working example** (It demonstrates some of the features of SPE)
+**A  working example** 
 ```python
 import numpy as np
 from sklearn import datasets
