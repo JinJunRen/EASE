@@ -23,7 +23,7 @@
   - Implemetation of reading datasets (dataprocess.py)
   - Implemetation of many metric (diversitymeasure.py), such as `Precision` `Recall` `Gmean` `F1` `MMC` `AUC`
 
-**NOTE:** The codes of [2] and [5-9] are implemented by Liu et.al. and download from https://github.com/ZhiningLiu1998/self-paced-ensemble#results-on-additional-datasets. The code of Polynom fit SMOTE [10] method comes from [smote_variants] https://smote-variants.readthedocs.io/en/latest/installation.html.
+**NOTE:** The codes of [2] and [5-9] are implemented by Liu et.al. and download from https://github.com/ZhiningLiu1998/self-paced-ensemble#results-on-additional-datasets; The code of [4] is implemented by MichałKoziarski and downloads from https://github.com/michalkoziarski/RBU; The codes of [3]is implemented by Wing W. Y. Ng et.al. and downloads from https://github.com/AlirezaKm/HUE.
 
 
 
