@@ -1,6 +1,5 @@
 # EqualizationEnsemble
 
-
 **Equalization ensemble method (EASE) is a general learning framework for large scale highly imbalanced Data.**
 
 
@@ -19,13 +18,13 @@
 - Implementation of 15 resampling based imbalance learning baselines
 - Additional experimental results
 
-**NOTE:** The implementations of [5],[7], Polynom fit SMOTE [10] and resampling methods are based on [imbalanced-algorithms](https://github.com/dialnd/imbalanced-algorithms), [smote_variants] https://smote-variants.readthedocs.io/en/latest/installation.html and [imbalanced-learn](https://github.com/scikit-learn-contrib/imbalanced-learn).
+**NOTE:** The codes of [2] and [5-9] are implemented by Liu et.al. and download from https://github.com/ZhiningLiu1998/self-paced-ensemble#results-on-additional-datasets. The code of Polynom fit SMOTE [10] method comes from [smote_variants] https://smote-variants.readthedocs.io/en/latest/installation.html.
 
 
 
 # Background
 
-we have proposed the framework of EASE to address the imbalanced classification problems. In the framework, the binning-based equalization under-sampling method has been used to provide balanced data sets for each of the base classifiers and combines the weighted integration strategy by using G-mean score as weights to improve the diversity and performance of the base classifiers at the same time. The extensive experiments have shown that the performance of the proposed method is not only significantly better than the contending methods on 61 small-scale data sets with low IR(<130) (especially for F1 and MMC metric), but also superior to the methods using the under-sampling technique on larger-scale data sets with high IR(>270). The figure below gives an overview of the EASE framework.
+We have proposed the framework of EASE to address the imbalanced classification problems. In the framework, the binning-based equalization under-sampling method has been used to provide balanced data sets for each of the base classifiers and combines the weighted integration strategy by using G-mean score as weights to improve the diversity and performance of the base classifiers at the same time. The extensive experiments have shown that the performance of the proposed method is not only significantly better than the contending methods on 61 small-scale data sets with low IR(<130) (especially for F1 and MMC metric), but also superior to the methods using the under-sampling technique on larger-scale data sets with high IR(>270). The figure below gives an overview of the EASE framework.
 
 ![image](./figure/framework.png)
 
@@ -47,11 +46,11 @@ git clone https://github.com/JinJunRen/EASE
 
 ## Documentation
 
-**Our EASE implementation can be used much in the same way as the ensemble classifiers in [sklearn.ensemble](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.ensemble).**  
+**Our EASE implementation can be used in the same way as the ensemble classifiers in [sklearn.ensemble](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.ensemble).**  
 
 | Parameters    | Description   |
 | ------------- | ------------- |
-| `base_estimator` | *object, optional (default=`sklearn.tree.DecisionTreeClassifier()`)* <br> The base estimator to fit on self-paced under-sampled subsets of the dataset. NO need to support sample weighting. Built-in `fit()`, `predict()`, `predict_proba()` methods are required. |
+| `base_estimator` | *object, optional (default=`sklearn.tree.DecisionTreeClassifier()`)* <br> Built-in `fit()`, `predict()`, `predict_proba()` methods are required. |
 | `maj_cls_prob`  | *function, optional (default=`lambda y_true, y_pred: np.absolute(y_true-y_pred)`)* <br> User-specified classification hardness function. <br> Input: `y_true` and `y_pred` Output: `hardness` (1-d array)  |
 | `n_estimator`    | *integer, optional (default=10)* <br> The number of base estimators in the ensemble. |
 | `random_state`   | *integer / RandomState instance / None, optional (default=None)* <br> If integer, random_state is the seed used by the random number generator; If RandomState instance, random_state is the random number generator; If None, the random number generator is the RandomState instance used by `numpy.random`. |
@@ -80,7 +79,7 @@ X, y = <data_loader>.load_data()
 ease = EASE().fit(X, y)
 ```
 
-**A  working example** 
+**A working example** 
 ```python
 import numpy as np
 from sklearn import datasets
