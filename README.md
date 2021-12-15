@@ -119,7 +119,7 @@ python runEnsemble.py -dir ./dataset/small-scale_dataset/glass5.dat  -alg  EASE 
 ```
 | Arguments   | Description   |
 | ----------- | ------------- |
-| `-alg` | *string, support: `EASE`,`SelfPacedEnsemble`, `ECUBoostRF`, `HashBasedUndersamplingEnsemble` , `SMOTEBoost`, `SMOTEBagging`, `RUSBoost`, `UnderBagging`, `BalanceCascade`.
+| `-alg` | *string, support: `EASE`,`SelfPacedEnsemble`, `ECUBoostRF`, `HashBasedUndersamplingEnsemble` , `SMOTEBoost`, `SMOTEBagging`, `RUSBoost`, `UnderBagging`, `BalanceCascade` ,`GradientBoostingClassifier`, `RandomForestClassifier`.
 | `-est` | *integer, optional (default=10)* <br> The number of base estimators in the ensemble. |
 | `-n` | *integer, optional (default=5)* <br> The number of n-fold. |
 
