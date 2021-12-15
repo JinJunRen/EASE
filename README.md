@@ -1,31 +1,6 @@
-# EqualizationEnsemble
+# Equalization Ensemble method (EASE)
 
-**Equalization ensemble method (EASE) is a general learning framework for large scale highly imbalanced Data.**
-
-
-**This repository contains:**
-- ensemble
-  - Implementation of Equalization Ensemble (equalizationensemble.py)
-  - Implementation of Self-paced Ensemble (self_paced_ensemble.py)[1]
-  - Implementation of Entropy and Confidence-based Under-sampling Boosting (ECUBoost_RF.py) [2]
-  - Implementation of Hashing-based Under-sampling Ensemble (hub_ensemble.py)[3]
-  - Implementation of Radial-Based Undersampling (rbu.py)[4]
-  - Implementation of 5 ensemble-based imbalance learning baselines (canonical_ensemble.py)
-  - `SMOTEBoost` [5]
-  - `SMOTEBagging` [6]
-  - `RUSBoost` [7]
-  - `UnderBagging` [8]
-  - `BalanceCascade` [9]
-- dataset
-  - small-scale dataset (61)
-  - large-scale dataset (0)
-- tools
-  - Implemetation of reading datasets (dataprocess.py)
-  - Implemetation of many metric (diversitymeasure.py), such as `Precision` `Recall` `Gmean` `F1` `MMC` `AUC`
-
-**NOTE:** The codes of [2] and [5-9] are implemented by Liu et.al. and download from https://github.com/ZhiningLiu1998/self-paced-ensemble#results-on-additional-datasets; The code of [4] is implemented by MichałKoziarski and downloads from https://github.com/michalkoziarski/RBU; The codes of [3]is implemented by Wing W. Y. Ng et.al. and downloads from https://github.com/AlirezaKm/HUE.
-
-
+## EASE is a general learning framework for large scale highly imbalanced Data.**
 
 # Background
 
@@ -129,6 +104,28 @@ Dataset links:
 [Credit Fraud](https://www.kaggle.com/mlg-ulb/creditcardfraud), 
 [KDDCUP](https://archive.ics.uci.edu/ml/datasets/kdd+cup+1999+data), 
 [Record Linkage](https://archive.ics.uci.edu/ml/datasets/Record+Linkage+Comparison+Patterns).
+
+#repository contains
+- ensemble
+  - Implementation of Equalization Ensemble (equalizationensemble.py)
+  - Implementation of Self-paced Ensemble (self_paced_ensemble.py)[1]
+  - Implementation of Entropy and Confidence-based Under-sampling Boosting (ECUBoost_RF.py) [2]
+  - Implementation of Hashing-based Under-sampling Ensemble (hub_ensemble.py)[3]
+  - Implementation of Radial-Based Undersampling (rbu.py)[4]
+  - Implementation of 5 ensemble-based imbalance learning baselines (canonical_ensemble.py)
+  - `SMOTEBoost` [5]
+  - `SMOTEBagging` [6]
+  - `RUSBoost` [7]
+  - `UnderBagging` [8]
+  - `BalanceCascade` [9]
+- dataset
+  - small-scale dataset (61)
+  - large-scale dataset (0)
+- tools
+  - Implemetation of reading datasets (dataprocess.py)
+  - Implemetation of many metric (diversitymeasure.py), such as `Precision` `Recall` `Gmean` `F1` `MMC` `AUC`
+
+**NOTE:** The codes of [2] and [5-9] are implemented by Liu et.al. and download from https://github.com/ZhiningLiu1998/self-paced-ensemble#results-on-additional-datasets; The code of [4] is implemented by MichałKoziarski and downloads from https://github.com/michalkoziarski/RBU; The codes of [3]is implemented by Wing W. Y. Ng et.al. and downloads from https://github.com/AlirezaKm/HUE.
 
 # References
 > [1] Z. Liu, W. Cao, Z. Gao, J. Bian, H. Chen, Y. Chang, T. Liu, Selfpaced ensemble for highly imbalanced massive data classification, in: 36th IEEE International Conference on Data Engineering, ICDE 2020, Dallas, TX, USA, April 20-24, 2020, IEEE, 2020, pp. 841–852.
