@@ -27,7 +27,7 @@
 
 we have proposed the framework of EASE to address the imbalanced classification problems. In the framework, the binning-based equalization under-sampling method has been used to provide balanced data sets for each of the base classifiers and combines the weighted integration strategy by using G-mean score as weights to improve the diversity and performance of the base classifiers at the same time. The extensive experiments have shown that the performance of the proposed method is not only significantly better than the contending methods on 61 small-scale data sets with low IR(<130) (especially for F1 and MMC metric), but also superior to the methods using the under-sampling technique on larger-scale data sets with high IR(>270). The figure below gives an overview of the EASE framework.
 
-![image](https://github.com/jinjunren/ease/figure/framework.png)
+![image](https://github.com/jinjunRen/EASE/figure/framework.png)
 
 # Install
 
@@ -40,7 +40,7 @@ Our EASE implementation requires following dependencies:
 
 
 ```
-git clone https://
+git clone https://github.com/JinJunRen/EASE
 ```
 
 # Usage
