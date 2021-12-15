@@ -27,7 +27,7 @@
 
 we have proposed the framework of EASE to address the imbalanced classification problems. In the framework, the binning-based equalization under-sampling method has been used to provide balanced data sets for each of the base classifiers and combines the weighted integration strategy by using G-mean score as weights to improve the diversity and performance of the base classifiers at the same time. The extensive experiments have shown that the performance of the proposed method is not only significantly better than the contending methods on 61 small-scale data sets with low IR(<130) (especially for F1 and MMC metric), but also superior to the methods using the under-sampling technique on larger-scale data sets with high IR(>270). The figure below gives an overview of the EASE framework.
 
-![image](https://github.com/jinjunRen/EASE/figure/framework.png)
+![image](https://github.com/JinJunRen/EASE/tree/main/figure/framework.png)
 
 # Install
 
@@ -73,3 +73,39 @@ git clone https://github.com/JinJunRen/EASE
 | ------------- | ------------- |
 | `base_estimator_` | *estimator* <br> The base estimator from which the ensemble is grown. |
 | `estimators_` | *list of estimator* <br> The collection of fitted base estimators. |
+## Examples
+
+**A minimal example**
+```python
+X, y = <data_loader>.load_data()
+ease = EASE().fit(X, y)
+```
+
+**A non-minimal working example** (It demonstrates some of the features of SPE)
+```python
+import numpy as np
+from sklearn import datasets
+from sklearn.tree import DecisionTreeClassifier
+from ensemble.equalizationensemble import EASE
+from utils import (make_binary_classification_target, imbalance_train_test_split)
+
+X, y = datasets.fetch_covtype(return_X_y=True)
+y = make_binary_classification_target(y, pos_label=7, verbose=True)
+X_train, X_test, y_train, y_test = imbalance_train_test_split(X, y, test_size=0.2)
+
+ease = EASE(
+    base_estimator=DecisionTreeClassifier()
+    n_estimators=10,
+    ).fit(X_train, y_train)
+
+print('auc_prc_score: {}'.format(ease.score(X_test, y_test)))
+```
+
+## Conducting comparative experiments
+
+We also provide a simple frameworkfor conveniently comparing the performance of our method and other baselines. It is also a more complex example of how to use our implementation of ensemble methods to perform classification. To use it, simply run:
+
+```
+python runEnsemble.py -dir ./dataset/small-scale_dataset/ --alg EASE  -n 10
+
+```
