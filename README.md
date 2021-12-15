@@ -119,6 +119,15 @@ python runEnsemble.py -dir ./dataset/small-scale_dataset/glass5.dat  -alg  EASE 
 | `-alg` | *string, support: `EASE`,`SelfPacedEnsemble`, `ECUBoostRF`, `HashBasedUndersamplingEnsemble` , `SMOTEBoost`, `SMOTEBagging`, `RUSBoost`, `UnderBagging`, `BalanceCascade`, `all` <br> When `all`, the script will run all supported methods. |
 | `-est` | *integer, optional (default=10)* <br> The number of base estimators in the ensemble. |
 | `-n` | *integer, optional (default=10)* <br> The number of n-fold. |
+
+## large-scale datasets
+
+Dataset links:
+[Credit Fraud](https://www.kaggle.com/mlg-ulb/creditcardfraud), 
+[KDDCUP](https://archive.ics.uci.edu/ml/datasets/kdd+cup+1999+data), 
+[Record Linkage](https://archive.ics.uci.edu/ml/datasets/Record+Linkage+Comparison+Patterns), 
+[Payment Simulation](https://www.kaggle.com/ntnu-testimon/paysim1).
+
 # References
 > [1] Z. Liu, W. Cao, Z. Gao, J. Bian, H. Chen, Y. Chang, T. Liu, Selfpaced ensemble for highly imbalanced massive data classification, in: 36th IEEE International Conference on Data Engineering, ICDE 2020, Dallas, TX, USA, April 20-24, 2020, IEEE, 2020, pp. 841–852.
 > [2] Z. Wang, C. Cao, Y. Zhu, Entropy and confidence-based undersampling boosting random forests for imbalanced problems, IEEE Trans. Neural Networks Learn. Syst. 31 (12) (2020) 5178–5191. doi:10.1109/TNNLS.2020.2964585.
