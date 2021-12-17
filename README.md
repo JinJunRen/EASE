@@ -31,7 +31,7 @@ git clone https://github.com/JinJunRen/EASE
 | Parameters    | Description   |
 | ------------- | ------------- |
 | `base_estimator` | *object, optional (default=`sklearn.tree.DecisionTreeClassifier()`)* <br> Built-in `fit()`, `predict()`, `predict_proba()` methods are required. |
-| `maj_cls_prob`  | *function, optional (default=`lambda y_true, y_pred: np.absolute(y_true-y_pred)`)* <br> User-specified classification hardness function. <br> Input: `y_true` and `y_pred` Output: `hardness` (1-d array)  |
+| `maj_cls_prob`  | *function, optional (default=`lambda y_true, y_pred: np.absolute(y_true-y_pred)`)* <br> User-specified classification function. <br> Input: `y_true` and `y_pred` Output: probability of samples belonging to the majority class (1-d array)  |
 | `n_estimator`    | *integer, optional (default=10)* <br> The number of base estimators in the ensemble. |
 | `random_state`   | *integer / RandomState instance / None, optional (default=None)* <br> If integer, random_state is the seed used by the random number generator; If RandomState instance, random_state is the random number generator; If None, the random number generator is the RandomState instance used by `numpy.random`. |
 
@@ -42,7 +42,6 @@ git clone https://github.com/JinJunRen/EASE
 | `fit(self, X, y, label_maj=0, label_min=1)` | Build a EASE of estimators from the training set (X, y). <br> `label_maj`/`label_min` specify the label of majority/minority class. <br> By default, we let the minority class be positive class (`label_min=1`). |
 | `predict(self, X)` | Predict class for X. |
 | `predict_proba(self, X)` | Predict class probabilities for X. |
-| `predict_log_proba(self, X)` | Predict class log-probabilities for X. |
 | `score(self, X, y)` | Returns the average precision score on the given test data and labels. |
 
 ----------------
@@ -82,19 +81,19 @@ print('auc_prc_score: {}'.format(ease.score(X_test, y_test)))
 ## Conducting comparative experiments
 
 We also provide a simple frameworkfor conveniently comparing the performance of our method and other baselines. It is also a more complex example of how to use our implementation of ensemble methods to perform classification. To use it, simply run:
-1. Run EASE on all of the datasets in the directory 'small-scale_dataset'
+1. Run EASE on all of the datasets in the directory 'small-scale_dataset/'
 ```
 python runEnsemble.py -dir ./dataset/small-scale_dataset/ --alg EASE -est 10  -n 5
 
 ```
-2. Run EASE, SelfPacedEnsemble, ECUBoostRF and BalanceCascade on the data set glass5.dat
+2. Run EASE, SelfPacedEnsemble, ECUBoostRF and BalanceCascade on the data set 'glass5.dat'
 ```
 python runEnsemble.py -dir ./dataset/small-scale_dataset/glass5.dat  -alg  EASE SelfPacedEnsemble ECUBoostRF UnderBagging BalanceCascade -est 10  -n 5
 
 ```
 | Arguments   | Description   |
 | ----------- | ------------- |
-| `-alg` | *string, support: `EASE`,`SelfPacedEnsemble`, `ECUBoostRF`, `HashBasedUndersamplingEnsemble` , `SMOTEBoost`, `SMOTEBagging`, `RUSBoost`, `UnderBagging`, `BalanceCascade` ,`GradientBoostingClassifier`, `RandomForestClassifier`.
+| `-alg` | *string, support: `EASE`,`SelfPacedEnsemble`, `ECUBoostRF`, `HashBasedUndersamplingEnsemble` , `SMOTEBoost`, `SMOTEBagging`, `RUSBoost`, `UnderBagging`, `BalanceCascade` ,`GradientBoostingClassifier`, and `RandomForestClassifier`.
 | `-est` | *integer, optional (default=10)* <br> The number of base estimators in the ensemble. |
 | `-n` | *integer, optional (default=5)* <br> The number of n-fold. |
 
