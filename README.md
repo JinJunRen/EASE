@@ -1,6 +1,22 @@
 # Equalization Ensemble method (EASE)
 
 **EASE is a general learning framework for large scale highly imbalanced Data.**
+# Cite us
+
+If you find this repository helpful in your work or research, we would greatly appreciate citations to the following paper:
+```
+@article{REN2022108295,
+title = {Equalization ensemble for large scale highly imbalanced data classification},
+journal = {Knowledge-Based Systems},
+volume = {242},
+pages = {108295},
+year = {2022},
+issn = {0950-7051},
+doi = {https://doi.org/10.1016/j.knosys.2022.108295},
+url = {https://www.sciencedirect.com/science/article/pii/S0950705122000983},
+author = {Jinjun Ren and Yuping Wang and Mingqian Mao and Yiu-ming Cheung}
+}
+```
 
 # Background
 
