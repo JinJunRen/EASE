@@ -29,15 +29,6 @@ class EASE(BaseEstimator, ClassifierMixin):
         NO need to support sample weighting. 
         Built-in `fit()`, `predict()`, `predict_proba()` methods are required.
 
-    maj_cls_prob :  function, optional 
-        (default=`lambda y_true, y_pred: np.absolute(y_true-y_pred)`)
-        User-specified classification hardness function
-            Parameters:
-                y_true: 1-d array-like, shape = [n_samples] 
-                y_pred: 1-d array-like, shape = [n_samples] 
-            Returns:
-                hardness: 1-d array-like, shape = [n_samples]
-
     n_estimators :  integer, optional (default=10)
         The number of base estimators in the ensemble.
 
@@ -70,13 +61,9 @@ class EASE(BaseEstimator, ClassifierMixin):
     X_train, X_test, y_train, y_test = imbalance_train_test_split(
             X, y, test_size=0.2, random_state=42)
 
-    def absolute_error(y_true, y_pred):
-        # Self-defined classification hardness function
-        return np.absolute(y_true - y_pred)
 
     ease = EASE(
         base_estimator=DecisionTreeClassifier(),
-        hardness_func=absolute_error,
         n_estimators=10,
         random_state=42,
     ).fit(
@@ -89,14 +76,12 @@ class EASE(BaseEstimator, ClassifierMixin):
     """
     base_estimator=DecisionTreeClassifier()
     def __init__(self, 
-            base_estimator=DecisionTreeClassifier(), 
-            maj_cls_prob=lambda y_true, y_pred: np.absolute(y_true-y_pred),
+            base_estimator=DecisionTreeClassifier(),
             n_estimators=10,
             random_state=None):
         self.base_estimator = base_estimator
         self.estimators_ = []
         self.weight_ = []
-        self.maj_cls_prob = maj_cls_prob
         self.n_estimators = n_estimators
         self.random_state = random_state
 
@@ -201,7 +186,7 @@ class EASE(BaseEstimator, ClassifierMixin):
         sampled_bins : {array-like} of shape = [sampling_cnt], the indexs of the majority class after sampling
         '''
         # Update the probability of the majority class
-        prob_maj = self.maj_cls_prob(y_maj, self.y_pred_maj)
+        prob_maj = self.y_pred_maj
         # If the probabilitys are not distinguishable, perform random smapling
         if prob_maj.max() == prob_maj.min():
             maj_idx = self.random_sampling(len(X_maj), self.k_bins)
@@ -250,7 +235,7 @@ class EASE(BaseEstimator, ClassifierMixin):
                 X_train, y_train = self.random_under_sampling(
             X_maj, y_maj, X_min, y_min)
                 clf=self.fit_base_estimator(X_train, y_train)
-                self.y_pred_maj = clf.predict_proba(X_maj)[:, 1]
+                self.y_pred_maj = clf.predict_proba(X_maj)[:, 0]
                 self.weight_.append(1)
                 self.estimators_.append(clf)
                 continue
@@ -264,7 +249,7 @@ class EASE(BaseEstimator, ClassifierMixin):
                 self.weight_.append(eps)
                 W=np.array(self.weight_)
                 self.estimators_.append(clf)
-                temp_y_pred_maj = clf.predict_proba(X_maj)[:, 1]
+                temp_y_pred_maj = clf.predict_proba(X_maj)[:, 0]
                 self.y_pred_maj = self.y_pred_maj*(W[0:-1].sum()/W.sum()) + temp_y_pred_maj*(W[-1]/W.sum())
         return self
 
