@@ -1,6 +1,8 @@
 # Equalization Ensemble method (EASE)
 
-**EASE is a general learning framework for large scale highly imbalanced Data.**
+We have proposed the framework of EASE to address the imbalanced classification problems. In the framework,
+the binning-based equalization under-sampling method has been used to provide balanced data sets for each of the base classifiers and combines the weighted integration strategy by using G-mean score as weights to improve the diversity and performance of the base classifiers at the same time.
+
 # Cite us
 
 If you find this repository helpful in your work or research, we would greatly appreciate citations to the following paper:
